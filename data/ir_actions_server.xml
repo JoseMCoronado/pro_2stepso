@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.actions.server" id="action_set_state_waiting">
+      <field name="model_id" ref="sale.model_sale_order"/>
+      <field name="name">[JOS] Set Procell State to Waiting</field>
+      <field name="sequence">5</field>
+      <field name="state">code</field>
+      <field name="code"><![CDATA[
+record['x_state'] = 'waiting'
+        ]]>
+      </field>
+    </record>
+  </data>
+</odoo>

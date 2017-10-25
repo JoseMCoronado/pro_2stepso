@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record model="base.automation" id="auto_action_assign_state">
+    <field name="name">[JOS] Assign Procell State On Update</field>
+    <field name="trigger">on_write</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="state">code</field>
+    <field name="code">
+      <![CDATA[
+if record.x_state in ['waiting']:
+  if record.state in ['sale','cancel']:
+    record['x_state'] = record.state
+else:
+  record['x_state'] = record.state
+      ]]>
+    </field>
+  </record>
+</odoo>

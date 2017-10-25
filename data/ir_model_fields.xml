@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+    <record model="ir.model.fields" id="2step_state">
+        <field name="field_description">Procell State</field>
+        <field name="name">x_state</field>
+        <field name="model">sale.order</field>
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field name="complete_name" eval="False"/>
+        <field name="on_delete">set null</field>
+        <field name="selectable" eval="True"/>
+        <field name="state">manual</field>
+        <field name="store" eval="True"/>
+        <field name="selection">[['draft', 'Quotation'], ['sent', 'Quotation Sent'], ['waiting', 'Awaiting Approval'], ['sale', 'Sale Order'], ['done', 'Done'], ['cancel', 'Cancelled']]</field>
+        <field name="ttype">selection</field>
+    </record>
+  </data>
+</odoo>
